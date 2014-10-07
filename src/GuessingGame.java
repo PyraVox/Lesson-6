@@ -9,11 +9,11 @@
  */
 public class GuessingGame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form GuessingGame
-     */
+   int guess;
+   GuessMachine machine;
     public GuessingGame() {
         initComponents();
+      machine = new GuessMachine();
     }
 
     /**
@@ -109,9 +109,19 @@ public class GuessingGame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtGuessActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        int number = Integer.parseInt(txtGuess.getText());
+       /* int number = Integer.parseInt(txtGuess.getText());
         lblResult.setText("You Guessed A " +number );
-        lblAttempts.setText(" " +1);
+        lblAttempts.setText(" " +1);*/
+        guess Integer.pareseInt(txtGuess.getText());
+        
+            if(machine.setGuess(guess)){
+                lblResult.setText(machine.giveHint());
+                lblAttempts.setText(machine.getNumGuesses());
+            }
+            else lblResult.setText("Invalid Guess");
+            
+            if(machine.giveHint().equals ("You Got It!"))btnSubmit.setEnabled(false);
+    
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     /**
