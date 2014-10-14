@@ -32,9 +32,6 @@ public class GuessMachine {
         return (""+numGuesses);
     }
     int setGuess(){
-        if (guess>=1 && guess<=100)return guess;
-        
-       
-    }
-    
+        if (guess>=1 && guess<=100)
+            return guess;        
 }
